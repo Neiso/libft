@@ -6,7 +6,7 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 10:27:09 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/07 11:47:54 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/07 13:57:50 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 size_t		ft_strlcat(char *dst, char *src, size_t size)
 {
-	int i;
-	int j;
-	int dst_size;
+	size_t i;
+	size_t j;
+	size_t dst_size;
 
 	dst_size = ft_strlen(dst);
 	i = ft_strlen(dst);
 	j = 0;
-	while (src[j] && size > 0)
+	if (i == size)
+		return (ft_strlen(src));
+	while (src[j] && size > 1)
 	{
 		dst[i] = src[j];
 		i++;
@@ -34,9 +36,9 @@ size_t		ft_strlcat(char *dst, char *src, size_t size)
 
 int main()
 {
-	char dst[20];
-	char dst2[20];
+	char dst[20] = {'0'};
+	char dst2[20] = {'0'};
 	char *src = "Hello";
-	printf("\n%lu\n%s", ft_strlcat(dst, src, 15), dst);
-	printf("\n%lu\n%s", strlcat(dst2, src, 15), dst2);
+	printf("%lu\n%s\n", ft_strlcat(dst, src, 20), dst);
+	printf("\n%lu\n%s", strlcat(dst2, src, 20), dst2);
 }
