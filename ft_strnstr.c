@@ -6,20 +6,20 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 09:37:18 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/07 10:26:31 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/08 18:11:15 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_header.h"
+#include "libft.h"
 
-char	*ft_strnstr(char *haystack, char *needle, int len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int i;
-	int j;
-	int k;
+	size_t i;
+	size_t j;
+	size_t k;
 
 	if (needle[0] == '\0')
-		return (haystack);
+		return ((char *)haystack);
 	if (len == 0)
 		return (0);
 	j = 0;
@@ -33,7 +33,7 @@ char	*ft_strnstr(char *haystack, char *needle, int len)
 			i++;
 		}
 		if (needle[i] == '\0')
-			return (&haystack[j]);
+			return ((char *)&haystack[j]);
 		j++;
 		len--;
 	}

@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 08:51:51 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/09 12:32:43 by douatla          ###   ########.fr       */
+/*   Created: 2019/10/09 11:46:16 by douatla           #+#    #+#             */
+/*   Updated: 2019/10/09 11:50:19 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+char	*ft_strrchr(const char *s, int c)
 {
-	long nbr;
 	int i;
-	int sign;
 
-	sign = 0;
-	nbr = 0;
-	i = 0;
-	while (str[i] < 33)
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	i = ft_strlen(s);
+	while (i >= 0)
 	{
-		if (str[i] == '-')
-			sign++;
-		i++;
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i--;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nbr = (nbr * 10) + (str[i] - '0');
-		i++;
-	}
-	if (sign)
-		return (-(nbr));
-	return (nbr);
+	return (NULL);
 }
