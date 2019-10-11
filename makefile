@@ -8,16 +8,17 @@ BIN = *.o
 
 DEL = rm -Rf
 
-NAME = libft
+NAME = libft.a
 
 all : ${NAME}
 
-${NAME} :
+$(NAME) :
 	${CC} -c ${FLAGS} ${FILE}
-	${CC} -o ${NAME} ${BIN}
-
+	ar rc libft.a *.o
 clean :
 	${DEL} ${BIN}
 
 fclean : clean
 	${DEL} ${NAME}
+
+re : fclean all

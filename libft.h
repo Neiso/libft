@@ -6,7 +6,7 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 18:05:09 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/09 12:13:59 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/10 21:05:52 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,11 @@
  char	*ft_strrchr(const char *s, int c);
  int		ft_strncmp(const char *s1, const char *s2, size_t n);
  int		ft_strncmp(const char *s1, const char *s2, size_t n);
+ char   *ft_strdup(const char *s1);
+void    *ft_calloc(size_t num, size_t size);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *s, char c);
 
 #endif

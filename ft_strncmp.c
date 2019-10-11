@@ -6,7 +6,7 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 11:51:01 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/09 12:10:52 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/10 15:36:01 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,17 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	if (s1[i] == s2[i])
 		return (0);
-	return (s1[i] - s2[i]);
+	return (c1 - c2);
 }
+
+//
+//
+// int main()
+// {
+// 	char *s1 = "\200";
+// 	char *s2 = "\0";
+// 	printf("%d\n", s1[0]);
+// 	printf("%d\n", s2[0]);
+// 	printf("%d\n%d", ft_strncmp(s1,s2,1), strncmp(s1,s2,1));
+// }
+//

@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_itao.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 10:40:26 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/10 19:05:41 by douatla          ###   ########.fr       */
+/*   Created: 2019/10/11 17:47:22 by douatla           #+#    #+#             */
+/*   Updated: 2019/10/11 18:18:44 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_itoa(int n)
 {
-	size_t	i;
+	int		i;
 	char	*str;
-	char	*str2;
+	int		sign;
 
 	i = 0;
-	str = (char*)dst;
-	str2 = (char*)src;
-	if (dst == NULL && src == NULL)
-		return (dst);
-	while (len > 0)
+	sign = n < 0 ? 1 : 0;
+	while ((n = n / 10))
+		i++;
+	if (!(str = (char*)malloc(i + 1)))
+		return (NULL);
+	i = sign == 1 ? 1 : 0;
+	while (n)
 	{
-		str[len - 1] = str2[len - 1];
-		len--;
+		str[i] = (char)(n % 10);
+		n = n / 10;
+		i++;
 	}
-	dst = str;
-	return (dst);
+	str[i] = '\0';
+	return (str);
+}
+
+int main(){
+	printf("%s", ft_itoa(56));
 }
