@@ -6,7 +6,7 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 18:52:17 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/10 19:37:52 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/15 16:50:41 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	if(!(str = (char*)malloc(len + 1)))
+	if (!(str = (char*)malloc(len + 1)))
 		return (NULL);
 	i = 0;
 	while (i < len)
@@ -33,4 +33,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	return (str);
 }
-

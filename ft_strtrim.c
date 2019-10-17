@@ -6,7 +6,7 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 19:48:46 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/10 21:11:00 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/15 16:50:31 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while(ft_strchr(set, (int)s1[i]))
+	while (ft_strchr(set, (int)s1[i]))
 		i++;
-	while(!(ft_strchr(set, (int)s1[i])))
+	while (!(ft_strchr(set, (int)s1[i])))
 	{
 		str[j] = s1[i];
 		i++;

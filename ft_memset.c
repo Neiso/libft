@@ -6,7 +6,7 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 18:16:13 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/09 09:07:16 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/15 16:04:38 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t	i;
-	char 	*str;
+	char	*str;
 
 	str = b;
 	i = 0;

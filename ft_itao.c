@@ -6,7 +6,7 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 17:47:22 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/11 18:18:44 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/15 16:50:10 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,4 @@ char	*ft_itoa(int n)
 	}
 	str[i] = '\0';
 	return (str);
-}
-
-int main(){
-	printf("%s", ft_itoa(56));
 }

@@ -6,7 +6,7 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/22 15:53:05 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/11 17:47:49 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/15 16:51:03 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 int		is_separator(char act, char c)
 {
-
 	if (act == c)
 		return (1);
 	return (0);

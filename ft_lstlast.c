@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 11:51:01 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/15 16:51:15 by douatla          ###   ########.fr       */
+/*   Created: 2019/10/15 18:02:16 by douatla           #+#    #+#             */
+/*   Updated: 2019/10/15 18:07:52 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t			i;
-	unsigned char	c1;
-	unsigned char	c2;
+	int		i;
+	t_list	*node_a;
 
 	i = 0;
-	c1 = s1[i];
-	c2 = s2[i];
-	while (s1[i] && s2[i] && i < n)
+	node_a = lst;
+	while (node_a->next != NULL)
 	{
-		if (c1 != c2)
-			return (c1 - c2);
 		i++;
-		c1 = s1[i];
-		c2 = s2[i];
+		node_a = node_a->next;
 	}
-	if (s1[i] == s2[i])
-		return (0);
-	return (c1 - c2);
+	return (node_a);
 }
