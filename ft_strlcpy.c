@@ -6,7 +6,7 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 13:51:49 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/09 14:13:47 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/17 12:46:52 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
+	if (dst == NULL || src == NULL)
+		return (0);
 	i = 0;
 	while (src[i] && i < size - 1)
 	{

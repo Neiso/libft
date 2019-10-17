@@ -6,27 +6,38 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 19:48:46 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/15 16:50:31 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/17 12:44:12 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int difference(int i, int remind)
+{
+	if (remind - i > 0)
+		return (remind - i);
+	return (0);
+}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;
 	char	*str;
+	size_t	remind;
 
-	if (!s1)
-		return (NULL);
-	if (!(str = (char*)malloc(ft_strlen(s1) + 1)))
-		return (NULL);
 	i = 0;
 	j = 0;
-	while (ft_strchr(set, (int)s1[i]))
+	if (!s1)
+		return (NULL);
+	while (ft_strchr(set, s1[i]))
 		i++;
-	while (!(ft_strchr(set, (int)s1[i])))
+	remind = ft_strlen(s1);
+	while (ft_strchr(set, s1[remind]) && remind != 0)
+		remind--;
+	if (!(str = (char*)malloc(difference(i, remind) + 2)))
+		return (NULL);
+	while (i <= remind)
 	{
 		str[j] = s1[i];
 		i++;
