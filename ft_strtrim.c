@@ -6,13 +6,13 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 19:48:46 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/17 12:44:12 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/17 14:45:10 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int difference(int i, int remind)
+int		difference(int i, int remind)
 {
 	if (remind - i > 0)
 		return (remind - i);

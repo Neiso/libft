@@ -6,7 +6,7 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 11:51:01 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/15 16:51:15 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/17 15:02:27 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 	unsigned char	c2;
 
 	i = 0;
+	if (s1 == NULL || s2 == NULL || n == 0)
+		return (0);
 	c1 = s1[i];
 	c2 = s2[i];
-	while (s1[i] && s2[i] && i < n)
+	while (s1[i] && s2[i] && i < n - 1)
 	{
 		if (c1 != c2)
 			return (c1 - c2);

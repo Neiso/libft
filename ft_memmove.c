@@ -6,7 +6,7 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 10:40:26 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/10 19:05:41 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/17 16:06:54 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,18 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	str2 = (char*)src;
 	if (dst == NULL && src == NULL)
 		return (dst);
-	while (len > 0)
+	if (str > str2)
 	{
-		str[len - 1] = str2[len - 1];
-		len--;
+		while (len-- > 0)
+			str[len] = str2[len];
 	}
-	dst = str;
-	return (dst);
+	else
+	{
+		while (i < len)
+		{
+			str[i] = str2[i];
+			i++;
+		}
+	}
+	return ((dst = str));
 }
