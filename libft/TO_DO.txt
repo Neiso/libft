@@ -1,4 +1,5 @@
 Protect malloc in ft_split
+protect malloc in 
 If a malloc didn't work free all previous string in ft_split
 
 make function static
