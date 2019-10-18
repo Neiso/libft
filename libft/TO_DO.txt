@@ -1,0 +1,6 @@
+Protect malloc in ft_split
+If a malloc didn't work free all previous string in ft_split
+
+make function static
+
+protect substr
