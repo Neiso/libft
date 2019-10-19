@@ -1,7 +1,16 @@
 Protect malloc in ft_split
-protect malloc in 
+protect malloc in calloc and strdup
+
+DONE
+
 If a malloc didn't work free all previous string in ft_split
+
+DONE
 
 make function static
 
+DONE 
+
 protect substr
+
+DONE

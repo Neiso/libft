@@ -6,26 +6,26 @@
 /*   By: douatla <douatla@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/22 15:53:05 by douatla           #+#    #+#             */
-/*   Updated: 2019/10/18 10:43:23 by douatla          ###   ########.fr       */
+/*   Updated: 2019/10/19 14:59:55 by douatla          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 
-int		is_separator(char act, char c)
+static int		is_separator(char act, char c)
 {
 	if (act == c)
 		return (1);
 	return (0);
 }
 
-int		is_word(char c_act, char c_before, char c)
+static int		is_word(char c_act, char c_before, char c)
 {
 	return (!is_separator(c_act, c) && is_separator(c_before, c));
 }
 
-int		count_words(const char *s, char c)
+static int		count_words(const char *s, char c)
 {
 	int i;
 	int count;
@@ -41,7 +41,7 @@ int		count_words(const char *s, char c)
 	return (count);
 }
 
-char	*malloc_word(const char *s, char c)
+static char		*malloc_word(const char *s, char c, char **tab, int pos)
 {
 	int		i;
 	char	*word;
@@ -49,7 +49,12 @@ char	*malloc_word(const char *s, char c)
 	i = 0;
 	while (s[i] && !is_separator(s[i], c))
 		i++;
-	word = (char *)malloc(sizeof(char) * (i + 1));
+	if (!(word = (char *)malloc(sizeof(char) * (i + 1))))
+	{
+		while (pos-- >= 0)
+			free(tab[pos]);
+		return (NULL);
+	}
 	i = 0;
 	while (s[i] && !is_separator(s[i], c))
 	{
@@ -60,14 +65,15 @@ char	*malloc_word(const char *s, char c)
 	return (word);
 }
 
-char	**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
 	int		i;
 	char	**tab;
 
 	if (s == NULL)
 		return (NULL);
-	tab = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!(tab = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1))))
+		return (NULL);
 	if (!tab)
 		return (NULL);
 	i = 0;
@@ -77,7 +83,8 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*s && !is_separator(*s, c))
 		{
-			tab[i] = malloc_word(s, c);
+			if (!(tab[i] = malloc_word(s, c, tab, i)))
+				return (NULL);
 			i++;
 			while (*s && !is_separator(*s, c))
 				s++;
